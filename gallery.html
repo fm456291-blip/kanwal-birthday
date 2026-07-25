@@ -36,7 +36,7 @@
             padding-bottom: 15px;
         }
         .navbar a {
-            text-navigation: none; color: #555; font-weight: 600;
+            color: #555; font-weight: 600;
             padding: 8px 18px; border-radius: 20px; transition: all 0.3s ease;
             font-size: 0.9rem; background: rgba(255,255,255,0.6); text-decoration: none;
         }
@@ -46,9 +46,11 @@
         header h1 { font-family: 'Sacramento', cursive; font-size: 3.5rem; color: #d63384; margin-bottom: 5px; }
         .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 25px; font-weight: 300; }
         
+        .section-title { color: #d63384; margin: 25px 0 15px 0; font-size: 1.4rem; font-weight: 600; }
+
         /* Gallery Grid Layout */
         .gallery-grid {
-            display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px;
+            display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
         }
         .photo-card {
             background: #fff; padding: 10px 10px 15px 10px; border-radius: 8px;
@@ -60,6 +62,20 @@
         }
         .photo-card p {
             font-family: 'Sacramento', cursive; font-size: 1.3rem; color: #d63384; margin-top: 8px;
+        }
+
+        /* Special Poetry Video Box */
+        .poetry-video-box {
+            background: rgba(255, 240, 245, 0.7); border: 2px dashed #d63384;
+            padding: 20px; border-radius: 15px; display: inline-block; margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(214,51,132,0.15);
+        }
+        .poetry-video-box video {
+            width: 100%; max-width: 320px; height: 320px; object-fit: cover; border-radius: 10px; display: block; margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .poetry-video-box p {
+            font-family: 'Sacramento', cursive; font-size: 1.6rem; color: #d63384; margin-top: 12px;
         }
     </style>
 </head>
@@ -78,40 +94,54 @@
             <p class="subtitle">All the wonderful moments we shared...</p>
         </header>
 
-        <!-- Gallery Section with All Photos -->
+        <!-- Gallery Section with Photos -->
         <div class="gallery-grid">
             <div class="photo-card">
-                <img src="images/photo2.jpg" alt="Memory">
+                <img src="images/photo1.jpg" alt="Memory">
                 <p>Pyari Yaadein</p>
             </div>
             <div class="photo-card">
-                <img src="images/photo3.jpg" alt="Memory">
+                <img src="images/photo2.jpg" alt="Memory">
                 <p>Best Moments</p>
             </div>
             <div class="photo-card">
-                <img src="images/image5.jpg" alt="Memory">
+                <img src="images/photo3.jpg" alt="Memory">
                 <p>Special Day</p>
             </div>
             <div class="photo-card">
-                <img src="images/image6.jpg" alt="Memory">
+                <img src="images/image5.jpg" alt="Memory">
                 <p>Sweet Smiles</p>
             </div>
             <div class="photo-card">
-                <img src="images/image7.jpg" alt="Memory">
+                <img src="images/image6.jpg" alt="Memory">
                 <p>Beautiful You</p>
             </div>
             <div class="photo-card">
-                <img src="images/image8.jpg" alt="Memory">
+                <img src="images/image7.jpg" alt="Memory">
                 <p>Forever Dosti</p>
             </div>
             <div class="photo-card">
-                <img src="images/image9.jpg" alt="Memory">
+                <img src="images/image8.jpg" alt="Memory">
                 <p>Joyful Times</p>
             </div>
             <div class="photo-card">
-                <img src="images/image10.jpg" alt="Memory">
+                <img src="images/image9.jpg" alt="Memory">
                 <p>Sweet Memories</p>
             </div>
+            <div class="photo-card">
+                <img src="images/image10.jpg" alt="Memory">
+                <p>Precious Moments</p>
+            </div>
+        </div>
+
+        <!-- Special Poetry Video Section -->
+        <h3 class="section-title">✨ Special Poetry & Dedication Video 💌</h3>
+        <div class="poetry-video-box">
+            <video controls>
+                <source src="images/poetry-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>A Special Poem for You ✨</p>
         </div>
     </div>
 
