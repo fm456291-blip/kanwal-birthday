@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Kanwal - VIP Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/confetti-generator@1.0.0/dist/confetti.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(-45deg, #1f1c2c, #928dab, #eecda3, #ef629d);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            color: #fff; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            padding: 20px; overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        
+        .container {
+            position: relative; z-index: 10;
+            background: rgba(20, 20, 30, 0.65); backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            max-width: 800px; width: 100%; padding: 40px;
+            border-radius: 30px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            text-align: center; border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .navbar {
+            display: flex; justify-content: center; gap: 15px;
+            margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+        }
+        .navbar a {
+            text-decoration: none; color: #ddd; font-weight: 600;
+            padding: 8px 20px; border-radius: 25px; transition: all 0.3s ease;
+            font-size: 0.9rem; background: rgba(255, 255, 255, 0.08);
+        }
+        .navbar a:hover, .navbar a.active {
+            background: #ff758c; color: white; box-shadow: 0 4px 15px rgba(255, 117, 140, 0.5);
+        }
+        
+        header h1 { font-family: 'Sacramento', cursive; font-size: 4rem; color: #ff9a9e; margin-bottom: 0px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .subtitle { font-size: 1.05rem; color: #ccc; margin-bottom: 25px; font-weight: 300; letter-spacing: 1px; }
+
+        /* Premium Video Showcase Box */
+        .video-showcase {
+            background: rgba(255, 255, 255, 0.05); padding: 20px;
+            border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex; flex-direction: column; align-items: center; gap: 15px;
+            box-shadow: inset 0 0 20px rgba(255,255,255,0.02);
+        }
+        .video-container {
+            position: relative; width: 100%; max-width: 380px; height: 380px;
+            border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid rgba(255, 154, 158, 0.4);
+        }
+        .video-container video {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .video-desc {
+            font-size: 1rem; color: #ffd1dc; font-weight: 400;
+        }
+
+        .explore-btn {
+            display: inline-block; margin-top: 20px; background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white; text-decoration: none; padding: 12px 30px;
+            border-radius: 30px; font-weight: 600; transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 117, 140, 0.4);
+        }
+        .explore-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 117, 140, 0.7); }
+    </style>
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <a href="index.html" class="active">Home 🏠</a>
+            <a href="wish.html">Special Wish ✨</a>
+            <a href="gallery.html">Memories 📸</a>
+        </nav>
+
+        <header>
+            <h1>Happy Birthday, Kanwal! 🎉</h1>
+            <p class="subtitle">A Special Celebration of Life & Joy • 5th August</p>
+        </header>
+
+        <!-- Premium Cake Cutting Video Section -->
+        <div class="video-showcase">
+            <div class="video-container">
+                <video controls autoplay muted loop>
+                    <source src="images/cake-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-desc">✨ The Magical Cake Cutting Moment 🎂✨</p>
+        </div>
+
+        <a href="wish.html" class="explore-btn">Read Special Wish 💌</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const confettiSettings = { target: 'confetti-canvas', max: 70, respawn: true, fps: 30 };
+            const confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        };
+    </script>
+</body>
+</html>

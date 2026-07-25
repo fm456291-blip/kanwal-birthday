@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Wish - Kanwal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/confetti-generator@1.0.0/dist/confetti.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            color: #333; min-height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            padding: 20px; overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .container {
+            position: relative; z-index: 10;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px);
+            max-width: 750px; width: 100%; padding: 40px;
+            border-radius: 25px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            text-align: center; border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .navbar {
+            display: flex; justify-content: center; gap: 15px;
+            margin-bottom: 25px; border-bottom: 2px solid rgba(214, 51, 132, 0.2);
+            padding-bottom: 15px;
+        }
+        .navbar a {
+            text-decoration: none; color: #555; font-weight: 600;
+            padding: 8px 18px; border-radius: 20px; transition: all 0.3s ease;
+            font-size: 0.9rem; background: rgba(255,255,255,0.6);
+        }
+        .navbar a:hover, .navbar a.active {
+            background: #d63384; color: white; box-shadow: 0 4px 10px rgba(214,51,132,0.3);
+        }
+        header h1 { font-family: 'Sacramento', cursive; font-size: 3.5rem; color: #d63384; margin-bottom: 5px; }
+        .subtitle { font-size: 1.1rem; color: #555; margin-bottom: 25px; font-weight: 300; }
+        .message-card {
+            background: #fff5f8; padding: 30px; border-radius: 15px;
+            border-left: 6px solid #d63384; text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px;
+        }
+        .message-card h2 { color: #d63384; margin-bottom: 12px; font-size: 1.4rem; }
+        .message-card p { line-height: 1.8; color: #444; font-size: 0.95rem; }
+        .surprise-section button {
+            background: linear-gradient(45deg, #d63384, #e73c7e);
+            color: white; border: none; padding: 14px 30px;
+            font-size: 1.05rem; border-radius: 30px; cursor: pointer;
+            transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
+            font-weight: 600;
+        }
+        .surprise-section button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(214, 51, 132, 0.6); }
+        .hidden {
+            display: none; margin-top: 20px; font-size: 1.15rem;
+            color: #d63384; font-weight: 600; background: #fff5f8;
+            padding: 20px; border-radius: 12px; border: 2px dashed #d63384;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <canvas id="confetti-canvas"></canvas>
+    <div class="container">
+        <!-- Navigation Menu -->
+        <nav class="navbar">
+            <a href="index.html">Home 🏠</a>
+            <a href="wish.html" class="active">Special Wish ✨</a>
+            <a href="gallery.html">Memories 📸</a>
+        </nav>
+
+        <header>
+            <h1>A Special Message For You 💌</h1>
+            <p class="subtitle">To my dearest sister and best friend ❤️</p>
+        </header>
+
+        <section class="message-card">
+            <h2>Meri Pyaari Behan Kanwal,</h2>
+            <p>
+                Tum sirf meri dost nahi ho, meri family ka hissa aur meri behan ho. Main Allah ka jitna shukar ada karu kam hai ke usne mujhe tum jaisi samajhdaar, khuloos-dil aur pyari dost di. 
+                Zindagi ke har mod par tumne mera sath diya hai. Main dua karti hoon ke Allah tala tumhe duniya ki har khushi, lambi zindagi aur dher saari kamyabi ata farmaye! Aameen. 🤲❤️
+            </p>
+        </section>
+
+        <!-- Interactive Surprise Button -->
+        <section class="surprise-section">
+            <button id="surpriseBtn">Click for Your Secret Gift! 🎁</button>
+            <div id="surpriseText" class="hidden">
+                <p>🌟 Tum meri life ki sabse khoobsurat blessing ho! Hamesha haste raho aur aise hi chamakti raho! Happy Birthday, Kanwal! 🎂🎈</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const confettiSettings = { target: 'confetti-canvas', max: 80, respawn: true, fps: 30 };
+            const confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        };
+
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const surpriseText = document.getElementById('surpriseText');
+
+        surpriseBtn.addEventListener('click', function() {
+            if (surpriseText.style.display === 'block') {
+                surpriseText.style.display = 'none';
+                surpriseBtn.textContent = 'Click for Your Secret Gift! 🎁';
+            } else {
+                surpriseText.style.display = 'block';
+                surpriseBtn.textContent = 'Hide Surprise 🙈';
+            }
+        });
+    </script>
+</body>
+</html>
