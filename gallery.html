@@ -26,7 +26,7 @@
         .container {
             position: relative; z-index: 10;
             background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(12px);
-            max-width: 950px; width: 100%; padding: 40px;
+            max-width: 1000px; width: 100%; padding: 40px;
             border-radius: 25px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
             text-align: center; border: 1px solid rgba(255, 255, 255, 0.5);
         }
@@ -53,15 +53,25 @@
             display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;
         }
         .photo-card {
-            background: #fff; padding: 10px 10px 15px 10px; border-radius: 8px;
+            background: #fff; padding: 10px; border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.12); transition: transform 0.3s ease;
+            /* Fixed frame size */
+            width: 180px; height: 220px; 
+            display: flex; flex-direction: column; justify-content: space-between;
+            overflow: hidden;
         }
-        .photo-card:hover { transform: scale(1.06); z-index: 20; }
+        .photo-card:hover { transform: scale(1.05); z-index: 20; }
+        
+        /* Yahan main change hai: object-fit: contain */
         .photo-card img {
-            width: 160px; height: 160px; object-fit: cover; border-radius: 5px; display: block;
+            width: 100%; height: 160px; /* Fixed image height inside the card */
+            object-fit: contain; /* Picture puri nazar aaye gi, crop nahi hogi */
+            border-radius: 8px; display: block;
+            background-color: #f9f9f9; /* Choti picture ke peeche halka background */
         }
         .photo-card p {
-            font-family: 'Sacramento', cursive; font-size: 1.3rem; color: #d63384; margin-top: 8px;
+            font-family: 'Sacramento', cursive; font-size: 1.4rem; color: #d63384; margin-top: 8px;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
 
         /* Special Poetry Video Box */
